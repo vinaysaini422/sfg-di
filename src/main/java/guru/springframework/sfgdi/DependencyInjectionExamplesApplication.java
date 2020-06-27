@@ -20,6 +20,10 @@ public class DependencyInjectionExamplesApplication {
         PrimaryController primaryController = (PrimaryController) ctx.getBean("primaryController");
         System.out.println(primaryController.getGreeting());
 
+        System.out.println("-------------------- I18n Controller -----------------------");
+        I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+        System.out.println(i18nController.getGreeting());
+
         System.out.println("-------------------- Property Injection -----------------------");
         PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
         System.out.println(propertyInjectedController.getGreeting());
