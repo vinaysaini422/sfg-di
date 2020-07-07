@@ -1,5 +1,7 @@
 package com.saini.isp;
 
+/* Interface Segregation Principle*/
+
 public class ToyBuilder {
     public static ToyHouse buildToyHouse(){
         ToyHouse toyHouse=new ToyHouse();
