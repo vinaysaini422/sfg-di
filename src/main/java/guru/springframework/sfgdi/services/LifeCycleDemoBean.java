@@ -9,11 +9,30 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+/* Callback Interfaces InitializingBean and DisposableBean
+   InitializingBean.afterPropertiesSet() -called after properties set
+   DisposableBean.destroy() -called during bean destruction in shutdown
+*/
+
+/* Life Cycle Annotations
+    @PostConstruct -- will be called after the bean has been constructed, but before it returned to the requested object
+    @PreDestroy -- will be called just before the bean is destroyed by the container
+*/
+
+/* Bean Post Processors -BeanPostProcessor Interface
+    postProcessBeforeInitialization() -- called before bean initialization method
+    postProcessAfterInitialization() -- called after bean initialization
+*/
+
 @Component
 public class LifeCycleDemoBean implements InitializingBean, DisposableBean, BeanNameAware, BeanFactoryAware, ApplicationContextAware {
 
     public LifeCycleDemoBean() {
         System.out.println("## I am in lifecycle bean constructor");
+    }
+
+    public void init(){
+        System.out.println("## The LifeCycleBean  init method called");
     }
 
     @Override
