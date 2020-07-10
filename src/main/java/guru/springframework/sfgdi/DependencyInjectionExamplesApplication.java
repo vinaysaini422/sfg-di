@@ -36,6 +36,10 @@ public class DependencyInjectionExamplesApplication {
         ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
         System.out.println(constructorInjectedController.getGreeting());
 
+        //((ConfigurableApplicationContext)ctx).close();
+
+        System.out.println();
+
 	}
 
 }
